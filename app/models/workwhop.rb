@@ -1,0 +1,2 @@
+class Workwhop < ApplicationRecord
+end
