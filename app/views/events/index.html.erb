@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <h4 class="card-title"> <%= event.name %></h4>
                         <p class="lead"><%= truncate(event.description, length: 50) %></p>
-                        <h4><span class="badge bg-primary">From <%= event.start_time %> to <%= event.end_time %></span></h4>
+                        <h4><span class="badge bg-primary"><%= event.total_duration %></span></h4>
 
                         <%= link_to 'View Details', event, class: 'btn btn-danger btn-lg' %>
                     </div>
