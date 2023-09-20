@@ -7,4 +7,12 @@ class Event < ApplicationRecord
     def total_duration
         "From #{start_date} to #{end_date}"
     end
+
+    def daily_event_hours
+        "#{((start_time.to_time - end_time.to_time)/1.hours).abs} hours"
+    end
+
+    def daily_duration
+        "Everyday #{start_time} to #{end_time} (#{daily_event_hours})"
+    end
 end
