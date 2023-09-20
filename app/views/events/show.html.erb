@@ -18,5 +18,64 @@
         </div>
     </div>
 </div>
-<div class="col-lg-5">
+<div class="col-lg-4 mt-4">
+    <div class="card shadow mb-3">
+        <div class="card-body">
+            <h4 class="card-title mb-2">Reserver your sit</h4>
+
+            <%= form_with url: "#", data: {turbo: false} do |form|%>
+            <%= form.hidden_field :event_id, value: @event.id%>
+
+            <div class="form-group"> 
+                <%= form.label :full_name, class: "mb-2 mt-2" %>
+                <%= form.text_field :full_name, class: "form-control", required: true %>
+            </div>
+
+            <div class="form-group"> 
+                <%= form.label :email, class: "mb-2 mt-2" %>
+                <%= form.text_field :email, class: "form-control", required: true %>
+            </div>
+
+            <div class="form-group"> 
+                <%= form.label :contact_number, class: "mb-2 mt-2" %>
+                <%= form.text_field :contact_number, class: "form-control", required: true %>
+            </div>
+
+            <div class="form-group"> 
+                <%= form.label :number_of_sits_you_want_to_book, class: "mb-2 mt-2" %>
+                <%= form.number_field :no_of_tickets, class: "form-control", required: true,  min: 1, max: @event.remaining_sits %>
+            </div>
+
+            <h4 class="mt-4 mb-3">Card Details</h4>
+
+            <div class="form-group"> 
+                <%= form.label :card_number, class: "mb-2 mt-2" %>
+                <%= form.text_field :card_number, class: "form-control", required: true %>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group"> 
+                        <%= form.label :cvv, class: "mb-2 mt-2" %>
+                        <%= form.text_field :cvv, class: "form-control", required: true, maxlength: 4 %>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group"> 
+                        <%= form.label :exp_month, class: "mb-2 mt-2" %>
+                        <%= form.number_field :exp_month, class: "form-control", required: true, min: 1, max:12 %>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group"> 
+                        <%= form.label :exp_year, class: "mb-2 mt-2" %>
+                        <%= form.number_field :exp_year, class: "form-control", required: true, min: 2022, max: 2040 %>
+                    </div>
+                </div>
+            </div>
+
+            
+            <% end %>
+        </div>
+    </div>
 </div>
