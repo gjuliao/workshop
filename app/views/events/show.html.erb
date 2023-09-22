@@ -23,7 +23,7 @@
         <div class="card-body">
             <h4 class="card-title mb-2">Reserver your sit</h4>
 
-            <%= form_with url: "#", data: {turbo: false} do |form|%>
+            <%= form_with url: :bookings, data: {turbo: false} do |form|%>
             <%= form.hidden_field :event_id, value: @event.id%>
 
             <div class="form-group"> 
