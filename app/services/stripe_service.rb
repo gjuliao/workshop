@@ -29,4 +29,12 @@ class StripeService
             }
         })
     end
+
+    def create_stripe_customer_card(params, stripe_customer)
+        token = create_card_token(params)
+        Stripe::Customer.create_source(
+            stripe_customer_id,
+            { source: token.id }
+        )
+    end
 end
