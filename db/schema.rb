@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_20_220939) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_21_233308) do
   create_table "bookings", force: :cascade do |t|
     t.integer "no_of_tickets"
     t.float "amount_paid"
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_20_220939) do
     t.string "full_name"
     t.string "email"
     t.string "contact_number"
-    t.string "stipe_customer_id"
+    t.string "stripe_customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
