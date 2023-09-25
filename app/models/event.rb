@@ -17,4 +17,8 @@ class Event < ApplicationRecord
     def daily_duration
         "Everyday #{start_time} to #{end_time} (#{daily_event_hours})"
     end
+
+    def is_upcoming_workshop?
+        start_date > Date.today
+    end
 end
