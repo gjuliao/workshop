@@ -20,6 +20,8 @@ class BookingsController < ApplicationController
             amount_paid: @amount_to_be_paid
         )
 
+        BookingsMailer.booking_confirmation(@booking).deliver_now
+
         redirect_to event_path(@event), notice: 'Your Ticket has been booked'
 
     rescue Stripe::StripeError => error
