@@ -1,5 +1,24 @@
-<h1>Bookings#booking_confirmation</h1>
+<div class="col-lg-10 mx-auto">
+  <div class="card shadow">
+    <div class="card header">
+      <h4 class="card-title">Booking Confirmation</h4>
+    </div>
+    <div class="card-body">
+      <h1>Greetinges from Webinari</h1>
+      <h3>Hello <%= @customer.full_name %></h3>
 
-<p>
-  <%= @greeting %>, find me in app/views/bookings_mailer/booking_confirmation.html.erb
-</p>
+      <p class="lead">Your booking for <strong><%= @event.name %></strong> has been confirmed.  Please find details below.</p>
+
+      <h3>Booking Details</h3>
+      <p><strong>No of Tickets:</strong><%= @booking.no_of_tickets %></p>
+      <p><strong>Amount paid:</strong><%= @booking.amount_paid %></p>
+
+      <hr>
+
+      <h3>Event Schedule</h3>
+      <h4><span class="badge bg-primary"><%= @event.total_duration%></span></h4>
+      <h4><span class="badge bg-primary"><%= @event.daily_duration%></span></h4>
+
+    </div>
+  </div>
+</div>
