@@ -1,4 +1,7 @@
 class Event < ApplicationRecord
+    extend FriendlyId
+    friendly_id :name, use: :slugged
+    
     has_many :bookings
     has_many :customers, through: :bookings
     validates :name, :description, presence: true
