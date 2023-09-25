@@ -23,8 +23,12 @@
         <div class="card-body">
             <h4 class="card-title mb-2">Reserver your sit</h4>
 
+
+            <% if @event.is_upcoming_event? %>
             <%= form_with url: :bookings, data: {turbo: false} do |form|%>
-            <%= form.hidden_field :event_id, value: @event.id%>
+
+            <%= form.hidden_field :event_id, value: @event.id %>
+        
 
             <div class="form-group"> 
                 <%= form.label :full_name, class: "mb-2 mt-2" %>
@@ -78,6 +82,7 @@
                 <%= form.submit "Book Your Tickets Now",class:"btn btn-outline-danger btn-lg mt-3" %>
             </div>
             <% end %>
+        <% end %>
         </div>
     </div>
 </div>
