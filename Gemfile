@@ -76,3 +76,4 @@ end
 gem 'cssbundling-rails'
 gem 'stripe'
 gem 'rqrcode'
+gem 'friendly_id', '~> 5.4.0'

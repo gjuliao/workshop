@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_21_233308) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_25_221513) do
   create_table "bookings", force: :cascade do |t|
     t.integer "no_of_tickets"
     t.float "amount_paid"
@@ -44,6 +44,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_21_233308) do
     t.integer "registration_fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
   add_foreign_key "bookings", "customers"
