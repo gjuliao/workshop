@@ -7,6 +7,8 @@
       <h1>Greetinges from Webinari</h1>
       <h3>Hello <%= @customer.full_name %></h3>
 
+      <h3>Here is your booking id: <%= @booking.order_number %>. This booking id is unique per order and will be required if refund needed.</h3>
+
       <p class="lead">Your booking for <strong><%= @event.name %></strong> has been confirmed.  Please find details below.</p>
 
       <%= @svg.html_safe %>
