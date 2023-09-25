@@ -1,0 +1,20 @@
+<div class="col-lg-12">
+    <div class="card shadow mt-5 mb-5">
+        <div class="card-header">
+            <h3><%= @booking.event.name %></h3>
+        </div>
+        <div class="card-body">
+            <h3><%= @booking.customer.full_name %> / <%= @booking.customer.email %></h3>
+
+            <h3>Booking Details</h3>
+            <p><strong>No of Tickets:</strong><%= @booking.no_of_tickets %></p>
+            <p><strong>Amount paid:</strong><%= @booking.amount_paid %></p>
+
+            <hr>
+
+            <h3>Event Schedule</h3>
+            <h4><span class="badge bg-primary"><%= @event.total_duration%></span></h4>
+            <h4><span class="badge bg-primary"><%= @event.daily_duration%></span></h4>
+        </div>
+    </div>
+</div>
