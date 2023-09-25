@@ -75,3 +75,4 @@ end
 
 gem 'cssbundling-rails'
 gem 'stripe'
+gem 'rqrcode'
