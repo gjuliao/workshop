@@ -1,9 +1,27 @@
-<div class="col-lg-6">
+<div class="col-lg-4 mt-5">
     <div class="card shadow">
         <div class="card-body">
             <p class="lead"><%= @event_count %> Total events</p>
             <p class="lead"><%= @upcoming_events_count %> Total upcoming events</p>
             <p class="lead"><%= @past_events_count %> Total upcoming events</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4 mt-5">
+    <div class="card shadow">
+        <div class="card-body">
+            <p class="lead"><%= @booking_count %> Total bookings</p>
+            <p class="lead">$<%= @revenue_earned %> Total revenue</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-lg-4 mt-5">
+    <div class="card shadow">
+        <div class="card-body">
+            <p class="lead"><%= @customer_count %> Total customers </p>
         </div>
     </div>
 </div>
