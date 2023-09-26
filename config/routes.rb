@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :admin_users
+  devise_for :admin_users, controllers: {
+    sessions: 'admin_users/sessions',
+    passwords: 'admin_users/passwords'
+  }
+
   root 'home#index'
   
   resources :events, only: %i[index show]
