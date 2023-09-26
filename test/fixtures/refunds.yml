@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: one
+  booking: one
+  no_of_tickets: 1
+  state: MyString
+  stripe_refund_id: MyString
+  is_partial_refund: false
+  amount_refunded: 1.5
+
+two:
+  customer: two
+  booking: two
+  no_of_tickets: 1
+  state: MyString
+  stripe_refund_id: MyString
+  is_partial_refund: false
+  amount_refunded: 1.5
