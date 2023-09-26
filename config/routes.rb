@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     get :booking_details, on: :member
   end
 
+  resources :refunds
+
   namespace :admin do
     get 'dashboard' => 'dashboard#index'
   end
