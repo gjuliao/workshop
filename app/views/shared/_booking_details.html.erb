@@ -1,0 +1,13 @@
+<h4>Your booking details</h4>
+<p class="lead">
+    <strong>Booking for</strong> <%= link_to event.name, event, target: '_blank' %>
+</p>
+<p class="lead">
+    <strong>Total tickets booked:</strong> <%= booking.no_of_tickets %>
+</p>
+<p class="lead">
+    <strong>Amount payed:</strong> <%= booking.amount_paid %>
+</p>
+<p class="lead">
+    <strong>Booking date:</strong> <%= booking.created_at.strftime("%d %a %B, %Y") %>
+</p>

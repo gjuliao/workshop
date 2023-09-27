@@ -3,16 +3,16 @@
         <div class="card-body">
             <h4>Your booking details</h4>
                 <p class="lead">
-                    <strong>Booking for</strong> <%= link_to @refund.booking.event.name, @refund.booking.event, target: '_blank' %>
+                    <strong>Booking for</strong> <%= link_to @event.name, @refund.booking.event, target: '_blank' %>
                 </p>
                 <p class="lead">
-                    <strong>Total tickets booked:</strong> <%= @refund.booking.no_of_tickets %>
+                    <strong>Total tickets booked:</strong> <%= @booking.no_of_tickets %>
                 </p>
                 <p class="lead">
-                    <strong>Amount payed:</strong> <%= @refund.booking.amount_paid %>
+                    <strong>Amount payed:</strong> <%= @booking.amount_paid %>
                 </p>
                 <p class="lead">
-                    <strong>Booking date:</strong> <%= @refund.booking.created_at.strftime("%d %a %B, %Y") %>
+                    <strong>Booking date:</strong> <%= @booking.created_at.strftime("%d %a %B, %Y") %>
                 </p>
         </div>
     </div>
