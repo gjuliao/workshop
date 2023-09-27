@@ -21,4 +21,12 @@ class Booking < ApplicationRecord
   def is_refundable?
     event.start_date > Date.today
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["amount_paid", "created_at", "customer_id", "event_id", "id", "no_of_tickets", "order_number", "stripe_transaction_id", "updated_at"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["customer", "event", "refunds"]
+  end
 end
