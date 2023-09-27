@@ -6,3 +6,27 @@
     </div>
     </div>
 </div>
+
+
+<div class="col-lg-6 mt-4">
+    <div class="card show">
+        <div class="card-body">
+           <h4 class="card-title">Refund Status for your booking</h4>
+            <ul class="list-group">
+                <% @accepted_refunds.each do |refund| %>
+                    <li class="list-group-item">
+                        <p class="lead"><%= refund.no_of_tickets %> Tickets ($ <%= refund.amount_to_be_refunded %>) to be refunded </p>
+                    <p class="lead"><span class="badge bg-primary">Refund Requested Accepted</span></p>
+                    </li>
+                <% end %>
+                <% @succesful_refunds.each do |refund| %>
+                    <li class="list-group-item">
+                        <p class="lead"><%= refund.no_of_tickets %> Tickets ($ <%= refund.amount_to_be_refunded %>) has been refunded </p>
+                    <p class="lead"><span class="badge bg-success">Refund Processes Succesfully</span></p>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
