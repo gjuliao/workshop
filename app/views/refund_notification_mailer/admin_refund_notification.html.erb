@@ -1,5 +1,19 @@
-<h1>RefundNotification#admin_refund_notification</h1>
+<div class="col-lg-10 col-xl-8 mx-auto">
+  <div class="card shadow">
+    <div class="card-header">
+      <h4 class="card-title">Refund requested Submitted for <%= @booking.order_number %></h4>
+    </div>
+    <div class="card-body">
+      <h1>Hey Admin User</h1>
+      <h3>User <%= @customer.full_name %> has requested a refund.</h3>
 
-<p>
-  <%= @greeting %>, find me in app/views/refund_notification_mailer/admin_refund_notification.html.erb
-</p>
+      <p class="lead">A refund is submitted for <strong><%= link_to @event.name, event_url(@event), target: '_blank' %></strong> with <strong>(Order No: <%= @booking.order_number %>) by <strong><%= @customer.full_name %></strong> and confirmed as valid.</p>
+
+
+      <h5>No of tickets to be cancelled: <%= @refund.no_of_tickets %></h5>
+      <h5>Refundable amount: <%= @refundable_amount %></h5>
+      <h5>Booking for: <%= link_to @event.name, event_url(@event), target: '_blank' %></h5>
+      <h5>Booking date: <%= @booking.created_at.strftime("%d-%m-%Y %H:M %p") %></h5>
+    </div>
+  </div>
+</div>
