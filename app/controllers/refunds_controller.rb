@@ -30,7 +30,7 @@ class RefundsController < ApplicationController
     def update
     end
 
-    def refunds_acceptance
+    def refund_acceptance
     end
 
     private
