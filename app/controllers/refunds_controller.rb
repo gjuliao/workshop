@@ -10,7 +10,7 @@ class RefundsController < ApplicationController
     def create
        booking = Booking.find_by(order_number: params[:refund][:order_number])
        if booking.present?
-        if booking.event.start_date > Date.today
+        if booking.is_refundable?
             @refund = Refund.create(
                 customer_id: booking.customer_id,
                 booking_id: booking.id,
@@ -23,5 +23,11 @@ class RefundsController < ApplicationController
        else
         redirect_to new_refund_path, alert: "You provided an invalid booking ID #{params[:refund][:order_number]}. No booking with this number."
        end
+    end
+
+    def update
+    end
+
+    def refunds_acceptance
     end
 end
