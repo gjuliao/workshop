@@ -20,7 +20,11 @@ Rails.application.routes.draw do
     resources :events
     resources :bookings
     resources :customers
-    resources :refunds
+    resources :refunds do
+      member do
+        patch :process_refund
+      end
+    end
 
   end
 end
