@@ -4,6 +4,7 @@
             <p class="lead"><%= @event_count %> Total events</p>
             <p class="lead"><%= @upcoming_events_count %> Total upcoming events</p>
             <p class="lead"><%= @past_events_count %> Total upcoming events</p>
+            <% link_to "View all Events", admin_events_path, class: "btn btn-primary"%>
         </div>
     </div>
 </div>
@@ -13,6 +14,7 @@
         <div class="card-body">
             <p class="lead"><%= @booking_count %> Total bookings</p>
             <p class="lead">$<%= @revenue_earned %> Total revenue</p>
+            <% link_to "View all Bookings", admin_bookings_path, class: "btn btn-primary"%>
         </div>
     </div>
 </div>
@@ -22,6 +24,7 @@
     <div class="card shadow">
         <div class="card-body">
             <p class="lead"><%= @customer_count %> Total customers </p>
+            <% link_to "View all Customers", admin_customers_path, class: "btn btn-primary"%>
         </div>
     </div>
 </div>
@@ -29,7 +32,28 @@
 <div class="col-lg-4 mt-5">
     <div class="card shadow">
         <div class="card-body">
-            <p class="lead"><%= @refundable_bookings.count %> Refundable Bookings</p>
+            <p class="lead"> <strong><%= @refundable_bookings.count %> Refundable Bookings </strong></p>
+            <% @refundable_bookings.each do |booking| %>
+                <p class="lead"><%= link_to booking.event.name, admin_booking_path(booking) %> </p>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-lg-4 mt-5">
+    <div class="card shadow">
+        <div class="card-body">
+            <p class="lead"> <strong><%= @active_refunds.count %> Active Refunds to be Processed </strong></p>
+            <ul class="list-group">
+                <% @active_refunds.each do |refund| %>
+                    <li class="list-group-item">
+                        <p class="lead"><%= link_to refund.booking.event.name, admin_event_path(refund.booking.event) %> </p>
+                        <p class="lead"><%= refund.no_of_tickets %> Tickets ($ <%= refund.amount_to_be_refunded %>) to be refunded </p>
+                        <%= link_to "Process Refund", "javascript:void(0)", class:"btn-primary btn"%>
+                    </li>
+                <% end %>
+            </ul>
         </div>
     </div>
 </div>
