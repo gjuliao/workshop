@@ -1,4 +1,77 @@
 <div class="col-lg-12 mt-5">
+
+    <div class="care mt-5 mb-5">
+        <div class="card-body">
+            <%= search_form_for @q, url: admin_bookings_path do |f| %>
+
+                <div class="row">
+                    <h4>Search from Booking Attributes</h4>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <%= f.label :order_number %>
+                            <%= f.search_field :order_number_cont, class: 'form-control' %>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <%= f.label :amount_paid_eq %>
+                            <%= f.search_field :amount_paid_eq, class: 'form-control' %>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <%= f.label :amount_paid_lteq %>
+                            <%= f.search_field :amount_paid_lteq, class: 'form-control' %>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <%= f.label :amount_paid_gteq %>
+                            <%= f.search_field :amount_paid_gteq, class: 'form-control' %>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <h4>Search from customer Attributes</h4>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <%= f.label :customer_name %>
+                            <%= f.search_field :customer_full_name_cont, class: 'form-control' %>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <%= f.label :customer_email %>
+                            <%= f.search_field :customer_email_cont, class: 'form-control' %>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <%= f.label :customer_contact %>
+                            <%= f.search_field :customer_contact_number_cont, class: 'form-control' %>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <%= f.submit class: 'btn btn-primary btn-lg mt-2' %> 
+                        </div>
+                    </div>
+
+                </div>
+                    
+
+                
+            <% end %>
+        </div>
+    </div>
     <table class="table table-borded">
         <thead>
             <tr>
