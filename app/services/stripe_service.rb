@@ -37,7 +37,7 @@ class StripeService
           })
     end
 
-    def create_stripe_refund(stripe_charge_id)
-        Stripe::Refund.create({ charge: stripe_charge_id })
+    def create_stripe_refund(stripe_charge_id, amount)
+        Stripe::Refund.create({ charge: stripe_charge_id, amount: amount * 100 })
     end
 end

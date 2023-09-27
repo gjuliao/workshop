@@ -5,7 +5,7 @@ class Admin::RefundsController < AdminController
         stripe_service = StripeService.new
         @refund.amount_refunded = @refund.amount_to_be_refunded
         stripe_charge_id = @refund.booking.stripe_transaction_id
-        stripe_refund = stripe_service.create_stripe_refund(stripe_charge_id)
+        stripe_refund = stripe_service.create_stripe_refund(stripe_charge_id, @refund.amount_to_be_refunded)
         @refund.stripe_refund_id = stripe_refund.id
         if @refund.amount_refunded == @refund.booking.amount_paid
             @refund.is_partial_refund = false
