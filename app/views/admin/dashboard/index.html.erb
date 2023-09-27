@@ -50,7 +50,7 @@
                     <li class="list-group-item">
                         <p class="lead"><%= link_to refund.booking.event.name, admin_event_path(refund.booking.event) %> </p>
                         <p class="lead"><%= refund.no_of_tickets %> Tickets ($ <%= refund.amount_to_be_refunded %>) to be refunded </p>
-                        <%= link_to "Process Refund", "javascript:void(0)", class:"btn-primary btn"%>
+                        <%= link_to "Process Refund", process_refund_admin_refund_path(refund), class:"btn-primary btn", method: :patch %>
                     </li>
                 <% end %>
             </ul>
