@@ -1,4 +1,6 @@
 class RefundsController < ApplicationController
+    before_action :set_refund_with_parents, only: %i[edit update refund_acceptance]
+
     def new
         @refund = Refund.new
     end
@@ -29,5 +31,13 @@ class RefundsController < ApplicationController
     end
 
     def refunds_acceptance
+    end
+
+    private
+
+    def set_refund_with_parents
+        @refund = Refund.find(params[:id])
+        @booking = @refund.booking
+        @event = @booking.event
     end
 end

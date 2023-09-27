@@ -41,4 +41,8 @@ class BookingsController < ApplicationController
     def card_token_params
         params.permit(:card_number, :exp_month, :exp_year, :cvv)
     end
+
+    def is_refundable?
+        event.start_date > Date.today
+    end
 end
