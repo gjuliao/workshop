@@ -1,0 +1,26 @@
+<div class="col-lg-12">
+    <table class="table table-borded">
+        <thead>
+            <tr>
+                <th>Booking Id</th>
+                <th>Customer</th>
+                <th>Event</th>
+                <th>Amount Paid</th>
+                <th>Tickets Booked</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @bookings.each do |booking| %>
+                <tr>
+                    <td><%= booking.order_number %></td>
+                    <td><%= booking.customer.full_name %></td>
+                    <td><%= booking.event.name %></td>
+                    <td><%= booking.amount_paid %></td>
+                    <td><%= booking.no_of_tickets %></td>
+                    <td>actions</td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
