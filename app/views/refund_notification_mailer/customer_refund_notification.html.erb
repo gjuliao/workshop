@@ -1,5 +1,20 @@
-<h1>RefundNotification#customer_refund_notification</h1>
+<div class="col-lg-10 col-xl-8 mx-auto">
+  <div class="card shadow">
+    <div class="card-header">
+      <h4 class="card-title">Refund requested Accepted</h4>
+    </div>
+    <div class="card-body">
+      <h1>Greetings from Edwshop</h1>
+      <h3>Hello <%= @customer.full_name %></h3>
 
-<p>
-  <%= @greeting %>, find me in app/views/refund_notification_mailer/customer_refund_notification.html.erb
-</p>
+      <p class="lead">This is to inform you that your refund request for <strong><%= link_to @event.name, event_url(@event), target: '_blank' %></strong> <strong>(Order No: <%= @booking.order_number %>) has been accepted. We have forward the request to refund within 24 hours and you will receive money back within 5-7 days.</strong></p>
+
+
+      <p class="lead">Please find the refund details below</p>
+
+      <h5>No of tickets to be cancelled: <%= @refund.no_of_tickets %></h5>
+      <h5>Refundable amount: <%= @refundable_amount %></h5>
+      <h5>Booking for: <%= link_to @event.name, event_url(@event), target: '_blank' %></h5>
+    </div>
+  </div>
+</div>
