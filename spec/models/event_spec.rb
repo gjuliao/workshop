@@ -13,7 +13,7 @@ RSpec.describe Event, type: :model do
             remaining_sits: 100,
             registration_fee: 100
         )
-        event.save
+     
         expect(event.valid?).to be(false)
     end
 
@@ -29,7 +29,7 @@ RSpec.describe Event, type: :model do
             remaining_sits: 100,
             registration_fee: 100
         )
-        event.save
+       
         expect(event.valid?).to be(false)
     end
 
@@ -45,7 +45,7 @@ RSpec.describe Event, type: :model do
             remaining_sits: 100,
             registration_fee: 100
         )
-        event.save
+        
         expect(event.total_duration).to eq("From #{event.start_date} to #{event.end_date}")
     end
 
@@ -61,7 +61,7 @@ RSpec.describe Event, type: :model do
             remaining_sits: 100,
             registration_fee: 100
         )
-        event.save
+        
         expect(event.daily_event_hours).to eq("#{((event.start_time.to_time - event.end_time.to_time)/1.hours).abs} hours")
     end
     
