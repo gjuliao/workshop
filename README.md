@@ -33,7 +33,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Giovanni's Portfolio <a name="about-project"></a>
+# 📖 Workshop Rails App <a name="about-project"></a>
 
 ** Workshop rails app is a platform that allows users to purchase and request partial or total refund for the purchase through Stripe. **
 
